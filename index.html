@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delta_R | Interactive Storyteller & Creative Developer</title>
+    <meta name="description"
+        content="Portfolio of Delta R, a Creative Developer crafting fluid, immersive, and narrative-driven digital experiences with cutting-edge front-end technologies.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- favicon -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg" />
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Delta_R" />
+    <link rel="manifest" href="/assets/favicons/site.webmanifest" />
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dark-theme">
+    <!-- Custom Cursor -->
+    <div id="custom-cursor" class="custom-cursor hidden">
+        <span class="cursor-label">VIEW</span>
+    </div>
+    <div id="cursor-dot" class="cursor-dot hidden"></div>
+
+    <!-- Fluid Ambient Background Blobs -->
+    <div class="ambient-blobs">
+        <div class="blob blob-1" id="blob-1"></div>
+        <div class="blob blob-2" id="blob-2"></div>
+        <div class="blob blob-3" id="blob-3"></div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="#hero" class="logo magnetic" id="header-logo" data-hover-label="HOME">
+                <span class="logo-dot"></span>
+                <span class="logo-text">Delta_R</span>
+            </a>
+            <nav class="main-nav" aria-label="Main Navigation">
+                <ul class="nav-list">
+                    <li><a href="#philosophy" class="nav-link magnetic" data-hover-label="PHILOSOPHY">Philosophy</a>
+                    </li>
+                    <li><a href="#creations" class="nav-link magnetic" data-hover-label="CREATIONS">Creations</a></li>
+                    <li><a href="#journey" class="nav-link magnetic" data-hover-label="JOURNEY">Journey</a></li>
+                    <li><a href="#connection" class="nav-link magnetic btn-nav" data-hover-label="TALK">Let's
+                            Connect</a></li>
+                </ul>
+            </nav>
+            <div class="header-controls">
+                <button id="theme-toggle" class="theme-toggle magnetic" aria-label="Toggle theme"
+                    data-hover-label="THEME">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Story Index / Chapters Sidebar Navigation -->
+    <aside class="story-index" aria-label="Story Chapters">
+        <div class="story-track">
+            <div class="story-progress"></div>
+        </div>
+        <ul class="story-chapters-list">
+            <li>
+                <a href="#hero" class="story-dot-link active" id="chapter-dot-0" aria-label="Chapter 1: The Spark">
+                    <span class="chapter-number">01</span>
+                    <span class="chapter-title">The Spark</span>
+                </a>
+            </li>
+            <li>
+                <a href="#philosophy" class="story-dot-link" id="chapter-dot-1" aria-label="Chapter 2: The Philosophy">
+                    <span class="chapter-number">02</span>
+                    <span class="chapter-title">Philosophy</span>
+                </a>
+            </li>
+            <li>
+                <a href="#creations" class="story-dot-link" id="chapter-dot-2" aria-label="Chapter 3: The Creations">
+                    <span class="chapter-number">03</span>
+                    <span class="chapter-title">Creations</span>
+                </a>
+            </li>
+            <li>
+                <a href="#journey" class="story-dot-link" id="chapter-dot-3" aria-label="Chapter 4: The Journey">
+                    <span class="chapter-number">04</span>
+                    <span class="chapter-title">Journey</span>
+                </a>
+            </li>
+            <li>
+                <a href="#connection" class="story-dot-link" id="chapter-dot-4" aria-label="Chapter 5: The Connection">
+                    <span class="chapter-number">05</span>
+                    <span class="chapter-title">Connection</span>
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+    <main id="main-content">
+        <!-- Chapter 1: The Spark (Hero) -->
+        <section id="hero" class="story-section hero-section" data-chapter="0">
+            <div class="container hero-container">
+                <div class="hero-text-content">
+                    <span class="hero-badge reveal-item">CHAPTER 01 // THE SPARK</span>
+                    <h1 class="hero-title reveal-item">
+                        Crafting Fluid <br>
+                        <span class="text-gradient">Digital Stories.</span>
+                    </h1>
+                    <p class="hero-description reveal-item">
+                        I weave code, design, and motion into digital narratives that captivate and inspire. Let us tell
+                        a story together.
+                    </p>
+                    <div class="hero-actions reveal-item">
+                        <a href="#philosophy" class="btn btn-primary magnetic" id="hero-cta" data-hover-label="EXPLORE">
+                            <span>Explore the Narrative</span>
+                            <svg class="arrow-down-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <polyline points="19 12 12 19 5 12"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-prompt scroll-down-trigger magnetic" data-hover-label="SCROLL">
+                <div class="scroll-mouse">
+                    <div class="scroll-wheel"></div>
+                </div>
+                <div class="scroll-swipe">
+                    <svg class="swipe-hand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M12 11V4a1.5 1.5 0 0 0-3 0v7.5a.5.5 0 0 1-1 0V6.5a1.5 1.5 0 0 0-3 0V15a6 6 0 0 0 6 6h1.5a5.5 5.5 0 0 0 5.5-5.5v-3.5a1.5 1.5 0 0 0-3 0v1a.5.5 0 0 1-1 0V8a1.5 1.5 0 0 0-3 0v3" />
+                    </svg>
+                </div>
+                <span class="scroll-text">Scroll to unfold</span>
+                <span class="swipe-text">Swipe to unfold</span>
+            </div>
+        </section>
+
+        <!-- Chapter 2: The Philosophy (About) -->
+        <section id="philosophy" class="story-section philosophy-section" data-chapter="1">
+            <div class="container philosophy-container">
+                <div class="section-header">
+                    <span class="section-badge">CHAPTER 02 // PHILOSOPHY</span>
+                    <h2 class="section-title">The Principles of <span class="text-gradient">Craft.</span></h2>
+                </div>
+                <div class="philosophy-grid">
+                    <div class="philosophy-card glass-card reveal-item" id="phil-1">
+                        <div class="card-icon-wrapper">
+                            <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </div>
+                        <h3>Fluid Motion</h3>
+                        <p>Web animations shouldn't just run; they should flow like liquid. I design transitions that
+                            feel organic and react instinctively to user intent.</p>
+                    </div>
+                    <div class="philosophy-card glass-card reveal-item" id="phil-2">
+                        <div class="card-icon-wrapper">
+                            <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M12 2a7 7 0 1 0 10 10"></path>
+                            </svg>
+                        </div>
+                        <h3>Immersive Contrast</h3>
+                        <p>Light and shadow form the language of mood. The interplay of dark depth and light clarity
+                            shifts the user's emotional connection to content.</p>
+                    </div>
+                    <div class="philosophy-card glass-card reveal-item" id="phil-3">
+                        <div class="card-icon-wrapper">
+                            <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M4.5 16.5c-1.5 1.26-2.5 3.19-2.5 5.5h20c0-2.31-1-4.24-2.5-5.5"></path>
+                                <circle cx="12" cy="8" r="5"></circle>
+                            </svg>
+                        </div>
+                        <h3>Tactile Coding</h3>
+                        <p>Applying physics engine calculations to traditional cursor pointers and buttons makes flat
+                            displays feel physical and interactive.</p>
+                    </div>
+                </div>
+
+                <div class="skills-block glass-card reveal-item">
+                    <h3>Technical Archetype</h3>
+                    <div class="skills-slider-viewport">
+                        <div class="skills-flex">
+                            <div class="skill-tag magnetic" data-hover-label="HTML/CSS">CSS Animations / Variables</div>
+                            <div class="skill-tag magnetic" data-hover-label="JAVASCRIPT">Modern ES6+ JS</div>
+                            <div class="skill-tag magnetic" data-hover-label="PHYSICS">Cursor & Spring Physics</div>
+                            <div class="skill-tag magnetic" data-hover-label="LAYOUTS">CSS Grid / Flexbox</div>
+                            <div class="skill-tag magnetic" data-hover-label="ACCESSIBILITY">Semantic Web / A11y</div>
+                            <div class="skill-tag magnetic" data-hover-label="WEBGL">Generative Visuals</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chapter 3: The Creations (Horizontal Scroll Viewport) -->
+        <section id="creations" class="story-section creations-section" data-chapter="2">
+            <div class="sticky-container">
+                <div class="horizontal-header-wrapper">
+                    <div class="section-header">
+                        <span class="section-badge">CHAPTER 03 // CREATIONS</span>
+                        <h2 class="section-title">Selected <span class="text-gradient">Narratives.</span></h2>
+                    </div>
+                </div>
+
+                <div class="horizontal-scroll-viewport">
+                    <div class="projects-horizontal-track">
+                        <!-- Project 1 -->
+                        <article class="project-card-horizontal glass-card" id="proj-card-1">
+                            <div class="project-image-container cursor-hover-view">
+                                <img src="assets/proj1.png" alt="Project Nexus Interface Mockup" class="project-image"
+                                    loading="lazy">
+                                <div class="project-overlay">
+                                    <span class="project-tag">INTERFACE</span>
+                                </div>
+                            </div>
+                            <div class="project-info">
+                                <h3 class="project-title">Project Nexus</h3>
+                                <p class="project-summary">A clean, high-performance web dashboard displaying live
+                                    dynamic animations, glassmorphic UI controls, and localized layout widgets.</p>
+                                <div class="project-links">
+                                    <a href="#" class="btn btn-secondary btn-sm magnetic"
+                                        data-hover-label="EXPLORE">Explore Live</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Project 2 -->
+                        <article class="project-card-horizontal glass-card" id="proj-card-2">
+                            <div class="project-image-container cursor-hover-view">
+                                <img src="assets/proj2.png" alt="Aether Fluidity Generative Art Mockup"
+                                    class="project-image" loading="lazy">
+                                <div class="project-overlay">
+                                    <span class="project-tag">GENERATIVE</span>
+                                </div>
+                            </div>
+                            <div class="project-info">
+                                <h3 class="project-title">Aether Fluidity</h3>
+                                <p class="project-summary">An interactive sandbox focusing on liquid simulations and
+                                    dynamic canvas particle trails responding to cursor coordinates.</p>
+                                <div class="project-links">
+                                    <a href="#" class="btn btn-secondary btn-sm magnetic" data-hover-label="ENTER">Enter
+                                        Sandbox</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Project 3 -->
+                        <article class="project-card-horizontal glass-card" id="proj-card-3">
+                            <div class="project-image-container cursor-hover-view">
+                                <img src="assets/proj3.png" alt="HabitFlow App Mockup" class="project-image"
+                                    loading="lazy">
+                                <div class="project-overlay">
+                                    <span class="project-tag">PRODUCTIVITY</span>
+                                </div>
+                            </div>
+                            <div class="project-info">
+                                <h3 class="project-title">HabitFlow</h3>
+                                <p class="project-summary">A minimalist habit tracking and task orchestration interface
+                                    utilizing spring progress gauges, streak maps, and client-side database storage.</p>
+                                <div class="project-links">
+                                    <a href="#" class="btn btn-secondary btn-sm magnetic"
+                                        data-hover-label="LAUNCH">Launch HabitFlow</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chapter 4: The Journey (Timeline) -->
+        <section id="journey" class="story-section journey-section" data-chapter="3">
+            <div class="container journey-container">
+                <div class="section-header">
+                    <span class="section-badge">CHAPTER 04 // JOURNEY</span>
+                    <h2 class="section-title">The Unfolding <span class="text-gradient">Timeline.</span></h2>
+                </div>
+                <div class="timeline-wrapper">
+                    <div class="timeline-line">
+                        <div class="timeline-progress-line"></div>
+                    </div>
+
+                    <div class="timeline-nodes">
+                        <!-- Node 1 -->
+                        <div class="timeline-node glass-card reveal-item" id="node-1">
+                            <div class="node-indicator magnetic" data-hover-label="2024">
+                                <div class="node-indicator-dot"></div>
+                            </div>
+                            <div class="node-time">2024 — Present</div>
+                            <div class="node-content">
+                                <h3>Creative Technologist</h3>
+                                <span class="node-sub">Bespoke Design Studios</span>
+                                <p>Designing high-end interactive websites and applications utilizing custom canvas
+                                    renderers, fluid layout dynamics, and micro-interactions.</p>
+                            </div>
+                        </div>
+
+                        <!-- Node 2 -->
+                        <div class="timeline-node glass-card reveal-item" id="node-2">
+                            <div class="node-indicator magnetic" data-hover-label="LEARNING">
+                                <div class="node-indicator-dot"></div>
+                            </div>
+                            <div class="node-time">Learning Journey — 2022 to 2024</div>
+                            <div class="node-content">
+                                <h3>Self-Directed Creative Coding</h3>
+                                <span class="node-sub">Deep Dive: Shaders, Spring Physics & Motion Design</span>
+                                <p>Focused on understanding visual mechanics, writing custom animation frameworks, and
+                                    mastering the mathematics of interactive canvas coordinate tracking.</p>
+                            </div>
+                        </div>
+
+                        <!-- Node 3 -->
+                        <div class="timeline-node glass-card reveal-item" id="node-3">
+                            <div class="node-indicator magnetic" data-hover-label="FOUNDATIONS">
+                                <div class="node-indicator-dot"></div>
+                            </div>
+                            <div class="node-time">Learning Journey — 2020 to 2022</div>
+                            <div class="node-content">
+                                <h3>Foundational Systems & Design</h3>
+                                <span class="node-sub">Exploring Layout Mechanics, Color Theory & Web APIs</span>
+                                <p>Gained deep proficiency in structural HTML layouts, CSS layout paradigms (grid,
+                                    flexbox, variables), accessibility standard guidelines, and browser performance
+                                    foundations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chapter 5: The Connection (Contact) -->
+        <section id="connection" class="story-section connection-section" data-chapter="4">
+            <div class="container connection-container">
+                <div class="section-header">
+                    <span class="section-badge">CHAPTER 05 // CONNECTION</span>
+                    <h2 class="section-title">Initiate a <span class="text-gradient">Chapter.</span></h2>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-details reveal-item">
+                        <h3>Let's write a narrative together.</h3>
+                        <p>Have an interesting project, dynamic concept, or open collaborative opportunity? I would love
+                            to connect and weave your goals into a fluid interface experience.</p>
+
+                        <div class="direct-contact">
+                            <span class="contact-label">DIRECT CHANNEL</span>
+                            <a href="mailto:rishal@unix2.com,rishalmohammed0k@gmail.com,rishalgamer0@gmail.com"
+                                class="contact-email magnetic" data-hover-label="MAIL">hello@Delta_R.dev</a>
+                        </div>
+
+                        <div class="contact-socials">
+                            <a href="#" class="contact-social-icon magnetic" data-hover-label="INSTA"
+                                aria-label="Instagram">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                </svg>
+                            </a>
+                            <a href="#" class="contact-social-icon magnetic" data-hover-label=" X " aria-label="X">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+                                    <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+                                </svg>
+                            </a>
+                            <a href="#" class="contact-social-icon magnetic" data-hover-label="LINKEDIN"
+                                aria-label="LinkedIn">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                    </path>
+                                    <rect x="2" y="9" width="4" height="12"></rect>
+                                    <circle cx="4" cy="4" r="2"></circle>
+                                </svg>
+                            </a>
+                            <a href="#" class="contact-social-icon magnetic" data-hover-label="GITHUB"
+                                aria-label="GitHub">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                    </path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-container glass-card reveal-item">
+                        <form class="contact-form" id="portfolio-contact-form" action="#" method="POST">
+                            <div class="form-row">
+                                <div class="input-group">
+                                    <input type="text" id="user-name" name="name" required placeholder=" ">
+                                    <label for="user-name">Your Name</label>
+                                    <span class="input-border"></span>
+                                </div>
+                                <div class="input-group">
+                                    <input type="email" id="user-email" name="email" required placeholder=" ">
+                                    <label for="user-email">Your Email</label>
+                                    <span class="input-border"></span>
+                                </div>
+                            </div>
+                            <div class="input-group text-area-group">
+                                <textarea id="user-message" name="message" required placeholder=" " rows="5"></textarea>
+                                <label for="user-message">Describe Your Project Story</label>
+                                <span class="input-border"></span>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-submit magnetic" data-hover-label="SUBMIT">
+                                <span>Send Message</span>
+                                <svg class="send-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="main-footer">
+            <div class="footer-container">
+                <div class="footer-left">
+                    <p>&copy; 2026 Delta R. Crafted with care & fluidity.</p>
+                </div>
+                <div class="footer-right">
+                    <ul class="social-list">
+                        <li><a href="#" class="social-link magnetic" data-hover-label="TWITTER">Twitter</a></li>
+                        <li><a href="#" class="social-link magnetic" data-hover-label="GITHUB">GitHub</a></li>
+                        <li><a href="#" class="social-link magnetic" data-hover-label="LINKEDIN">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        </div>
+
+        <!-- Main JavaScript -->
+        <script src="script.js"></script>
+</body>
+
+</html>
